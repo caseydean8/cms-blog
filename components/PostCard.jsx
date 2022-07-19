@@ -2,11 +2,11 @@ import React from "react";
 import moment, { ISO_8601 } from "moment";
 import Link from "next/link";
 
-const PostCard = ({ post }) => {
-  console.log(post);
+const PostCard = ({ post, key }) => {
+  // console.log(post);
   return (
     // padding 0, large devices padding 8, padding-bottom 12 margin-bottom 8
-    <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+    <div key={key} className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
         <img
           src={post.featuredImage.url}
