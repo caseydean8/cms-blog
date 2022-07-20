@@ -27,11 +27,11 @@ const PostCard = ({ post }) => {
             width="30px"
             className="align-middle rounded-full"
           />
-          <p className="inline align-middle text-grey-700 ml-2 text-lg">
+          <p className="inline align-middle text-gray-700 ml-2 text-lg">
             {post.author.name}
           </p>
         </div>
-        <div className="font-medium text-grey-700">
+        <div className="font-medium text-gray-700">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 inline mr-2 text-pink-500"
@@ -49,7 +49,7 @@ const PostCard = ({ post }) => {
           <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>
         </div>
       </div>
-      <p className="text-center text-lg text-grey-700 font-normal px-4 lg:px-20 mb-8">
+      <p className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">
         {post.excerpt}
       </p>
       <div className="text-center">
