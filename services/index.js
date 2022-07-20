@@ -42,6 +42,40 @@ export const getPosts = async () => {
   return result.postsConnection.edges;
 };
 
+export const getPostDetails = async (slug) => {
+  const query = gql`
+    query GetPostDetails($slug: String!) {
+      post(where: { slug: $slug }) {
+        author {
+          bio
+          name
+          id
+          photo {
+            url
+          }
+        }
+        createdAt
+        slug
+        title
+        excerpt
+        featuredImage {
+          url
+        }
+        categories {
+          name
+          slug
+        }
+        content {
+          raw
+        }
+      }
+    }
+  `;
+  const result = await graphQLClient.request(query, { slug });
+
+  return result.post;
+};
+
 export const getRecentPosts = async () => {
   const query = gql`
     query getPostDetails() {
@@ -63,7 +97,7 @@ export const getRecentPosts = async () => {
   return result.posts;
 };
 
-export const getSimilarPosts = async () => {
+export const getSimilarPosts = async (categories, slug) => {
   const query = gql`
     query getPostDetails($slug: String!, $categories: [String!]) {
       posts(
@@ -83,21 +117,21 @@ export const getSimilarPosts = async () => {
       }
     }
   `;
-  const result = await graphQLClient.request(query);
+  const result = await graphQLClient.request(query, { categories, slug });
 
   return result.posts;
 };
 
 export const getCategories = async () => {
   const query = gql`
-    query GetCategories  {
+    query GetCategories {
       categories {
         name
         slug
       }
     }
-  `
+  `;
   const result = await graphQLClient.request(query);
 
   return result.categories;
-}
+};
