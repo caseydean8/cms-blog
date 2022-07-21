@@ -9,7 +9,12 @@ const Comments = ({ slug }) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    getComments(slug).then((result) => setComments(result));
+    getComments(slug).then((result) => {
+      console.log(`slug / result Comments.jsx`);
+      console.log(slug);
+      console.log(result);
+      setComments(result);
+    });
   }, []);
 
   return (
@@ -20,7 +25,10 @@ const Comments = ({ slug }) => {
             {comments.length} {comments.length != 1 ? "Comments" : "Comment"}
           </h3>
           {comments.map((comment) => (
-            <div key={comment.createdAt} className="border-b border-gray-100 mb-4 pb-4">
+            <div
+              key={comment.createdAt}
+              className="border-b border-gray-100 mb-4 pb-4"
+            >
               <p className="mb-4">
                 <span className="font-semibold">{comment.name}</span> on{" "}
                 {moment(comment.createdAt).format("MMM DD, YYYY")}
