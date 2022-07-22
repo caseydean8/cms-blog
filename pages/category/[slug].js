@@ -4,9 +4,6 @@ import { getCategories, getCategoryPost } from "../../services";
 import { PostCard, Categories, Loader } from "../../components";
 
 const CategoryPost = ({ posts }) => {
-  // where are the posts props coming from?
-  console.log(`posts props in pages/category/slug.js`);
-  console.log(posts);
   const router = useRouter();
 
   if (router.isFallback) {

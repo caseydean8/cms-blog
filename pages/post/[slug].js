@@ -10,7 +10,6 @@ import {
   CommentsForm,
   Loader
 } from "../../components";
-import { userAgent } from "next/server";
 
 const PostDetails = ({ post }) => {
 
