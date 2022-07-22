@@ -13,6 +13,7 @@ const CommentsForm = ({ slug }) => {
   const storeDataEl = useRef();
 
     useEffect(() => {
+      setLocalStorage(window.localStorage);
       nameEl.current.value = window.localStorage.getItem("name");
       emailEl.current.value = window.localStorage.getItem("email")
     }, [])
