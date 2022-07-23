@@ -35,8 +35,8 @@ const CommentsForm = ({ slug }) => {
 
     if (storeData) {
       // next.js requires "window" before localStorage
-      window.localStorage.setItem("name", name);
-      window.localStorage.setItem("email", email);
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
     } else {
       window.localStorage.removeItem("name", name);
       window.localStorage.removeItem("email", email);
