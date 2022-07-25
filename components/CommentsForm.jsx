@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import Button from "./Button";
 
 import { submitComment } from "../services";
 
@@ -12,11 +13,11 @@ const CommentsForm = ({ slug }) => {
   const emailEl = useRef();
   const storeDataEl = useRef();
 
-    useEffect(() => {
-      setLocalStorage(window.localStorage);
-      nameEl.current.value = window.localStorage.getItem("name");
-      emailEl.current.value = window.localStorage.getItem("email")
-    }, [])
+  useEffect(() => {
+    setLocalStorage(window.localStorage);
+    nameEl.current.value = window.localStorage.getItem("name");
+    emailEl.current.value = window.localStorage.getItem("email");
+  }, []);
 
   const handleCommentSubmit = () => {
     setError(false);
@@ -98,13 +99,12 @@ const CommentsForm = ({ slug }) => {
       </div>
       {error && <p className="text-xs text-red-500">All fields are required</p>}
       <div className="mt8">
-        <button
+        <Button
           type="submit"
           onClick={handleCommentSubmit}
-          className="transition duration-500 ease hover:bg-indigo-600 inline-block bg-pink-600 text-lg rounded-full text-white py-3 px-7 cursor:pointer"
-        >
-          Post Comment
-        </button>
+          text={"Post Comment"}
+        />
+
         {showSuccessMessage && (
           <span className="text-xl float-right font-semibold mt-3 text-green-500">
             Comment submitted for review
