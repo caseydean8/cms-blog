@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import Link from "next/link";
+import Button from "./Button";
 
 const PostCard = ({ post }) => {
   return (
@@ -51,12 +52,10 @@ const PostCard = ({ post }) => {
       <p className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">
         {post.excerpt}
       </p>
+      {/* soon to be button */}
       <div className="text-center">
-        <Link href={`/post/${post.slug}`}>
-          {/* padding x-axis 8, padding y-axis-3 */}
-          <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
-            Continue Reading
-          </span>
+        <Link href={`/post/${post.slug}`} text={"Continue Reading"} passHref>
+          <Button text="Continue Reading" />
         </Link>
       </div>
     </div>
