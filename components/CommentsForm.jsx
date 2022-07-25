@@ -30,6 +30,7 @@ const CommentsForm = ({ slug }) => {
     const { target } = e;
     if (target.type === "checkbox") {
       setFormData((prevState) => ({
+        
         ...prevState,
         [target.name]: target.checked,
       }));
