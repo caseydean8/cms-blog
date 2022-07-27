@@ -3,7 +3,10 @@ import moment from "moment";
 
 const PostDetail = ({ post }) => {
   // Render raw content from HyGraph
+  // find type for code
+  console.log(post)
   const getContentFragment = (index, text, obj, type) => {
+    // console.log(type)
     let modifiedText = text;
     if (obj) {
       if (obj.bold) {
@@ -54,7 +57,7 @@ const PostDetail = ({ post }) => {
         );
       // add border and background color
       case "code-block":
-          return <p key={index} className="font-mono mb-8">
+          return <p key={index} className="font-mono mb-8 overflow-x-scroll bg-gray-100 rounded p-1">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
