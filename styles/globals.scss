@@ -3,23 +3,24 @@
 @tailwind utilities;
 
 // @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @font-face {
-  font-family: 'SF Mono Regular';
+  font-family: "SF Mono Regular";
   font-style: normal;
   font-weight: normal;
-  src: local('SF Mono Regular'), url('./fonts/SFMonoRegular.woff') format('woff');
-  }
+  src: local("SF Mono Regular"),
+    url("./fonts/SFMonoRegular.woff") format("woff");
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
   // font-family: 'Montserrat', sans-serif;
-  font-family: 'Poppins', sans-serif;
-  &:before{
-    content:'';
+  font-family: "Poppins", sans-serif;
+  &:before {
+    content: "";
     content: "";
     width: 100%;
     height: 100vh;
@@ -37,31 +38,30 @@ body {
   }
 }
 
-.text-shadow{
+.text-shadow {
   text-shadow: 0px 2px 0px rgb(0 0 0 / 30%);
 }
 
-.adjacent-post{
-  & .arrow-btn{
+.adjacent-post {
+  & .arrow-btn {
     transition: width 300ms ease;
     width: 50px;
   }
-  &:hover{
-    & .arrow-btn{
+  &:hover {
+    & .arrow-btn {
       width: 60px;
     }
   }
 }
 
 .react-multi-carousel-list {
-  & .arrow-btn{
+  & .arrow-btn {
     transition: width 300ms ease;
     width: 50px;
-    &:hover{
+    &:hover {
       width: 60px;
     }
   }
-  
 }
 
 a {
@@ -80,11 +80,14 @@ a {
 }
 // hamburger 2 css
 .visuallyHidden {
-  position: absolute; 
-  overflow: hidden; 
-  clip: rect(0 0 0 0); 
-  height: 1px; width: 1px; 
-  margin: -1px; padding: 0; border: 0; 
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }
 
 .hamburger {
@@ -103,7 +106,7 @@ a {
   display: block;
   border-radius: 4px;
   transition: all 0.4s ease-in-out;
-  position: absolute; 
+  position: absolute;
 }
 
 .bar1 {
@@ -126,125 +129,56 @@ a {
 .hamburger2 .bar2,
 .hamburger3 .bar3,
 .hamburger4 .bar4 {
-    top: 13.5px;
+  top: 13.5px;
 }
 
 .hamburger4 .bar5 {
-    bottom: 0px;
+  bottom: 0px;
 }
 
 .hamburger4 .bar {
-    transition: all 0.4s ease-in-out, transform 0.4s ease-in-out 0.4s;
+  transition: all 0.4s ease-in-out, transform 0.4s ease-in-out 0.4s;
 }
 
 .hamburger4 .bar2 {
-    width: 1px;
-    transform: rotate(90deg);
-    left: 13.5px;
+  width: 1px;
+  transform: rotate(90deg);
+  left: 13.5px;
 }
 
 .hamburger4 .bar3 {
-    width: 1px;
-    left: 13.5px;
-    
+  width: 1px;
+  left: 13.5px;
 }
 
-.checkbox4:checked + label > .hamburger4 > .bar1{
-    top: 13.5px;
-    background-color: transparent;
+.checkbox4:checked + label > .hamburger4 > .bar1 {
+  top: 13.5px;
+  background-color: transparent;
 }
 
-.checkbox4:checked + label > .hamburger4 > .bar2{
-    left: 0px;
-    width: 30px;
-    transform: rotate(45deg);
+.checkbox4:checked + label > .hamburger4 > .bar2 {
+  left: 0px;
+  width: 30px;
+  transform: rotate(45deg);
 }
 
-.checkbox4:checked + label > .hamburger4 > .bar3{
-    left: 0;
-    width: 30px;
-    transform: rotate(-45deg);
+.checkbox4:checked + label > .hamburger4 > .bar3 {
+  left: 0;
+  width: 30px;
+  transform: rotate(-45deg);
 }
 
-.checkbox4:checked + label > .hamburger4 > .bar4{
-    background-color: transparent;
+.checkbox4:checked + label > .hamburger4 > .bar4 {
+  background-color: transparent;
 }
 
-.checkbox4:checked + label > .hamburger4 > .bar5{
-    bottom: 13.5px;
-    background-color: transparent; 
+.checkbox4:checked + label > .hamburger4 > .bar5 {
+  bottom: 13.5px;
+  background-color: transparent;
 }
 
-
-// hamburger css
-svg {
-  height: 80px;
-  position: absolute;
-  width: 80px;
-}
-.plates {
-  display: flex;
-  flex-wrap: wrap;
-  // max-height: 160px;
-  // width: 640px;
-}
-// @media (max-width: 640px) {
-//   .plates {
-//     width: 320px;
-//   }
-// }
-.plate {
-  height: 80px;
-  width: 80px;
-}
-.burger {
-  filter: url(#gooeyness);
-}
-.x {
-  transform: scale(0);
-  transition: transform 400ms;
-}
-.line {
-  fill: none;
-  stroke: black;
-  stroke-width: 6px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transform-origin: 50%;
-  transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
-}
-.x .line {
-  stroke-width: 5.5px;
-}
-.plate4 .x {
-  transition: transform 400ms;
-}
-.plate4 .line {
-  transform-origin: 50%;
-  transition: transform 400ms 100ms;
-}
-.active.plate4 .line {
-  transition: transform 400ms;
-}
-.active.plate4 .line1 {
-  transform: translateX(18px) translateY(-3px) rotate(-45deg) scale(.7);
-}
-.active.plate4 .line2 {
-  transform: translateX(-18px) translateY(-3px) rotate(45deg) scale(.7);
-}
-.active.plate4 .line3 {
-  transform: translateY(0px) rotate(45deg) scale(.7);
-}
-.active.plate4 .line4 {
-  transform: translateY(0px) rotate(-45deg) scale(.7);
-}
-.active.plate4 .line5 {
-  transform: translateX(18px) translateY(3px) rotate(45deg) scale(.7);
-}
-.active.plate4 .line6 {
-  transform: translateX(-18px) translateY(3px) rotate(-45deg) scale(.7);
-}
-.active.plate4 .x {
-  transition: transform 400ms 100ms;
-  transform: scale(1);
+// collapsible list
+.expand {
+  overflow: hidden;
+  transition: height 0.5s;
 }

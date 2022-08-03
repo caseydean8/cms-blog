@@ -5,6 +5,12 @@ import Hamburger from "./Hamburger";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
+  const [transition, setTransition] = useState("0px");
+
+  const handleClick = (e) => {
+    // e.preventDefault();
+    transition === "0px" ? setTransition("50px") : setTransition("0px");
+  };
 
   useEffect(() => {
     getCategories().then((newCategories) => setCategories(newCategories));
@@ -26,7 +32,10 @@ const Header = () => {
             </Link>
           ))}
         </div>
-        <Hamburger />
+        <Hamburger onClick={handleClick} />
+        <div className="expand" style={{ height: transition }}>
+          Hello World
+        </div>
       </div>
     </div>
   );

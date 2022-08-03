@@ -1,21 +1,22 @@
 import React from "react";
 
-const Hamburger = () => {
+const Hamburger = (props) => {
   return (
     <>
       <div className="md:hidden justify-self-end pt-[2px]">
         <input
-          type="checkbox"
           id="checkbox4"
-          class="checkbox4 visuallyHidden"
+          type="checkbox"
+          onClick={props.onClick}
+          className="checkbox4 visuallyHidden"
         />
-        <label for="checkbox4" style={{}}>
-          <div class="hamburger hamburger4">
-            <span class="bar bar1"></span>
-            <span class="bar bar2"></span>
-            <span class="bar bar3"></span>
-            <span class="bar bar4"></span>
-            <span class="bar bar5"></span>
+        <label htmlFor="checkbox4">
+          <div className="hamburger hamburger4">
+            <span className="bar bar1"></span>
+            <span className="bar bar2"></span>
+            <span className="bar bar3"></span>
+            <span className="bar bar4"></span>
+            <span className="bar bar5"></span>
           </div>
         </label>
       </div>
