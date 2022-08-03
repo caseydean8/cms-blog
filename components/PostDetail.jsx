@@ -31,7 +31,7 @@ const PostDetail = ({ post }) => {
         );
       case "paragraph":
         return (
-          <p key={index} className="mb-8">
+          <p key={index} className="mb-7">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -57,7 +57,7 @@ const PostDetail = ({ post }) => {
         );
       // add border and background color
       case "code-block":
-          return <p key={index} className="font-mono mb-8 overflow-x-scroll bg-gray-100 rounded p-1">
+          return <p key={index} className="font-mono mb-7 overflow-x-scroll sm:overflow-x-auto bg-gray-100 rounded px-2 py-1">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}

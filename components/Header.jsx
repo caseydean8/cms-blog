@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { getCategories } from "../services";
+import Hamburger from "./Hamburger";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -9,13 +10,11 @@ const Header = () => {
     getCategories().then((newCategories) => setCategories(newCategories));
   }, []);
   return (
-    <div className="container mx-auto px-10 mb-8">
-      <div className="border-b w-full inline-block border-teal py-8">
-        <div className="md:float-left block">
+    <div className="container mx-auto md:px-10 px-8 mb-8">
+      <div className="border-b grid grid-cols-5 justify-items-stretch border-teal py-8">
+        <div className="col-span-4 md:col-span-3">
           <Link href="/">
-            <span className="cursor-pointer text-4xl">
-              Casey Carroll
-            </span>
+            <span className="cursor-pointer text-4xl">Casey Carroll</span>
           </Link>
         </div>
         <div className="hidden md:float-left md:contents">
@@ -27,6 +26,7 @@ const Header = () => {
             </Link>
           ))}
         </div>
+        <Hamburger />
       </div>
     </div>
   );
