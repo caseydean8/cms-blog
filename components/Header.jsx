@@ -9,7 +9,7 @@ const Header = () => {
 
   const handleClick = (e) => {
     // e.preventDefault();
-    transition === "0px" ? setTransition("50px") : setTransition("0px");
+    transition === "0px" ? setTransition("106px") : setTransition("0px");
   };
 
   useEffect(() => {
@@ -33,8 +33,13 @@ const Header = () => {
           ))}
         </div>
         <Hamburger onClick={handleClick} />
-        <div className="expand" style={{ height: transition }}>
-          Hello World
+        <div className="expand col-start-2 col-span-3 justify-self-center md:hidden" style={{ height: transition }}>
+          <ul className="text-center text-lg">
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Articles</li>
+          </ul>
         </div>
       </div>
     </div>
