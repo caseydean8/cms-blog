@@ -23,14 +23,15 @@ const CommentsForm = ({ slug }) => {
         window.localStorage.getItem("name") ||
         window.localStorage.getItem("email"),
     };
-    setFormData(initialFormData);
+    if (initialFormData.name && initialFormData.email) {
+      setFormData(initialFormData);
+    }
   }, []);
 
   const onInputChange = (e) => {
     const { target } = e;
     if (target.type === "checkbox") {
       setFormData((prevState) => ({
-        
         ...prevState,
         [target.name]: target.checked,
       }));

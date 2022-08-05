@@ -33,12 +33,23 @@ const Header = () => {
           ))}
         </div>
         <Hamburger onClick={handleClick} />
-        <div className="expand col-start-2 col-span-3 justify-self-center md:hidden" style={{ height: transition }}>
+        <div
+          className="expand col-start-2 col-span-3 justify-self-center md:hidden"
+          style={{ height: transition }}
+        >
           <ul className="text-center text-lg">
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Articles</li>
+            <Link href="/">
+              <li className="cursor-pointer">home</li>
+            </Link>
+            <Link href="/about">
+              <li className="cursor-pointer">about</li>
+            </Link>
+            <Link href="/contact">
+              <li className="cursor-pointer">contact</li>
+            </Link>
+            <Link href="/articles">
+              <li className="cursor-pointer">articles</li>
+            </Link>
           </ul>
         </div>
       </div>
