@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { getCategories } from "../services";
 import Hamburger from "./Hamburger";
 
@@ -7,14 +8,23 @@ const Header = () => {
   const [categories, setCategories] = useState([]);
   const [transition, setTransition] = useState("0px");
 
+  const router = useRouter();
+  
   const handleClick = (e) => {
-    // e.preventDefault();
     transition === "0px" ? setTransition("106px") : setTransition("0px");
   };
 
   useEffect(() => {
     getCategories().then((newCategories) => setCategories(newCategories));
   }, []);
+
+  const menu = [
+    { title: "home", path: "/" },
+    { title: "about", path: "/about" },
+    { title: "contact", path: "/contact" },
+    { title: "articles", path: "/articles" },
+  ];
+
   return (
     <div className="container mx-auto md:px-10 px-8 mb-8">
       <div className="border-b grid grid-cols-5 justify-items-stretch border-teal py-8">
@@ -38,18 +48,19 @@ const Header = () => {
           style={{ height: transition }}
         >
           <ul className="text-center text-lg">
-            <Link href="/">
-              <li className="cursor-pointer">home</li>
-            </Link>
-            <Link href="/about">
-              <li className="cursor-pointer">about</li>
-            </Link>
-            <Link href="/contact">
-              <li className="cursor-pointer">contact</li>
-            </Link>
-            <Link href="/articles">
-              <li className="cursor-pointer">articles</li>
-            </Link>
+            {menu.map((item) => {
+              return (
+                <Link key={item.title} href={item.path}>
+                  <li
+                    className={`cursor-pointer ${
+                      router.pathname === item.path ? "text-teal" : ""
+                    }`}
+                  >
+                    {item.title}
+                  </li>
+                </Link>
+              );
+            })}
           </ul>
         </div>
       </div>
