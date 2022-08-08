@@ -1,9 +1,14 @@
-import React from 'react'
-import Splash from "../../components/Splash"
+import React from "react";
+import Splash from "../../components/Splash";
+import Gallery from "../../components/Gallery";
+
 const index = () => {
   return (
-    <Splash />
-  )
-}
+    <>
+      <Splash />
+      <Gallery />
+    </>
+  );
+};
 
-export default index
+export default index;
