@@ -4,14 +4,14 @@ import React from "react";
 
 function Project(props) {
   return (
-    <div id={props.id} className="project col-sm-6 col-lg-4 p-0">
+    <div id={props.id} className="basis-full sm:basis-1/2 lg:basis-1/3">
       <button
         type="button"
         data-bs-toggle="modal"
         data-bs-target={`#modal-${props.id}`}
       >
         <img
-          className="project-image"
+          className=""
           src={props.image}
           alt={props.alt}
           width="600"

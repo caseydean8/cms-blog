@@ -3,9 +3,8 @@ import Project from "./Project";
 import data from "../services/data";
 
 const Gallery = () => {
-  console.log(data)
   return (
-    <div className="project-container row">
+    <div className="flex flex-wrap">
       {data.map((item, index) => {
         return (
           <Project

@@ -13,7 +13,7 @@ const Splash = () => {
           backSpeed={60}
           backDelay={2100}
           showCursor={false}
-          loop
+          // loop
         />
       <h4 className="font-medium py-2 text-xl">
         Welcome to the Portfolio of Casey Carroll, Full Stack Developer
