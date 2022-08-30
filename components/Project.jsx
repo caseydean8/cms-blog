@@ -1,21 +1,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import ProjectModal from "./ProjectModal";
-import Portal from "./Portal";
-// import "./Project.css";
-// import ProjectModal from "./ProjectModal";
 
 function Project(props) {
-  // console.log(`props in Project.jsx`)
-  // console.log(props)
-
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
-    console.log(`toggle Modal`);
     setIsOpen(!isOpen);
   }
-
+  
   return (
     <div
       id={props.id}
@@ -24,8 +17,6 @@ function Project(props) {
       <div
         type="button"
         onClick={toggleModal}
-        // data-bs-toggle="modal"
-        // data-bs-target={`#modal-${props.id}`}
       >
         <Image
           className=""
@@ -35,10 +26,7 @@ function Project(props) {
           height="338"
         />
       </div>
-      {/* <Portal open={isOpen} onClose={() => setIsOpen(false)} props={props}>
-        Portal stuff
-      </Portal> */}
-      <ProjectModal isOpen={isOpen} {...props} />
+      <ProjectModal isOpen={isOpen} handleClose={toggleModal} {...props} />
     </div>
   );
 }
