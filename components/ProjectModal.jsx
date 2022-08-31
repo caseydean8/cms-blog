@@ -29,7 +29,6 @@ const ProjectModal = (props) => {
               <button
                 type="button"
                 className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                data-modal-toggle="defaultModal"
                 onClick={() => props.handleClose()}
               >
                 <svg
@@ -58,6 +57,7 @@ const ProjectModal = (props) => {
               <a
               // font-normal leading-normal text-center?
                 className="inline-block cursor-pointer select-none border border-teal text-teal rounded py-1.5 px-3 m-1"
+                target="_blank"
                 rel="noopener noreferrer"
                 href={props.link}
               >
@@ -65,6 +65,7 @@ const ProjectModal = (props) => {
               </a>
               <a
                 className="inline-block cursor-pointer select-none border border-teal text-teal rounded py-1.5 px-3 m-1"
+                target="_blank"
                 rel="noopener noreferrer"
                 href={props.repo}
               >
