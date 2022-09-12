@@ -3,7 +3,7 @@ import React from "react";
 const Hamburger = (props) => {
   return (
     <>
-      <div className="md:hidden justify-self-end pt-[2px]">
+      <div className="md:hidden col-start-7 justify-self-end pt-[4px]">
         <input
           id="checkbox4"
           type="checkbox"

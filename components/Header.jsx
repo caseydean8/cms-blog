@@ -27,13 +27,13 @@ const Header = () => {
 
   return (
     <div className="container mx-auto md:px-10 px-8 mb-8">
-      <div className="border-b grid grid-cols-5 justify-items-stretch border-teal py-8">
-        <div className="col-span-4 md:col-span-3">
+      <div className="border-b grid grid-cols-7 justify-items-stretch border-teal py-8">
+        <div className="col-span-6 md:col-span-3">
           <Link href="/">
             <span className="cursor-pointer text-4xl">Casey Carroll</span>
           </Link>
         </div>
-        <div className="hidden md:float-left md:contents">
+        {/* <div className="hidden md:float-left md:contents">
           {categories.map((category) => (
             <Link key={category.slug} href={`/category/${category.slug}`}>
               <span className="md:float-right mt-2 align-middle ml-4 font-semibold cursor-pointer">
@@ -41,12 +41,12 @@ const Header = () => {
               </span>
             </Link>
           ))}
-        </div>
+        </div> */}
         <div className="hidden md:float-left md:contents">
           {menu.map((item) => (
             <Link key={item.title} href={item.path}>
               <span
-                className={`md:float-right mt-2 align-middle ml-4 font-semibold cursor-pointer ${
+                className={`md:float-right mt-2 align-middle justify-self-end ml-4 font-semibold cursor-pointer ${
                   router.pathname === item.path ? "text-teal" : ""
                 }`}
               >
@@ -57,7 +57,8 @@ const Header = () => {
         </div>
         <Hamburger onClick={handleClick} />
         <div
-          className="expand col-start-2 col-span-3 justify-self-center md:hidden"
+          className="expand col-start-3 col-span-3
+           justify-self-center md:hidden"
           style={{ height: transition }}
         >
           <ul className="text-center text-lg">
