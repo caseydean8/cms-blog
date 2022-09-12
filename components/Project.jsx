@@ -8,22 +8,20 @@ function Project(props) {
   function toggleModal() {
     setIsOpen(!isOpen);
   }
-  
+
   return (
     <div
       id={props.id}
-      className="basis-full sm:basis-1/2 lg:basis-1/3 cursor-pointer"
+      className="basis-full sm:basis-1/2 lg:basis-1/3 cursor-pointer border border-white"
     >
-      <div
-        type="button"
-        onClick={toggleModal}
-      >
+      <div type="button" onClick={toggleModal}>
         <Image
-          className=""
+          className="h-full"
           src={props.image}
           alt={props.alt}
           width="600"
           height="338"
+          layout="responsive"
         />
       </div>
       <ProjectModal isOpen={isOpen} handleClose={toggleModal} {...props} />
