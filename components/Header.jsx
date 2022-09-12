@@ -26,7 +26,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="container mx-auto md:px-10 px-8 mb-8">
+    // <div className="md:px-10 px-8 mb-8">
       <div className="border-b grid grid-cols-7 justify-items-stretch border-teal py-8">
         <div className="col-span-6 md:col-span-3">
           <Link href="/">
@@ -78,7 +78,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
