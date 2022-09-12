@@ -1,5 +1,5 @@
 import React from "react";
-import emailjs from "@emailjs/browser";
+import * as emailjs from "@emailjs/browser";
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -74,7 +74,6 @@ class ContactForm extends React.Component {
       .then(
         (result) => {
           this.setState({ submitted: true });
-          console.log(result);
           console.log(result.text);
         },
         (error) => console.log(error)
