@@ -9,7 +9,7 @@ const Header = () => {
   const [transition, setTransition] = useState("0px");
 
   const router = useRouter();
-  
+
   const handleClick = (e) => {
     transition === "0px" ? setTransition("106px") : setTransition("0px");
   };
@@ -38,6 +38,19 @@ const Header = () => {
             <Link key={category.slug} href={`/category/${category.slug}`}>
               <span className="md:float-right mt-2 align-middle ml-4 font-semibold cursor-pointer">
                 {category.name}
+              </span>
+            </Link>
+          ))}
+        </div>
+        <div className="hidden md:float-left md:contents">
+          {menu.map((item) => (
+            <Link key={item.title} href={item.path}>
+              <span
+                className={`md:float-right mt-2 align-middle ml-4 font-semibold cursor-pointer ${
+                  router.pathname === item.path ? "text-teal" : ""
+                }`}
+              >
+                {item.title}
               </span>
             </Link>
           ))}

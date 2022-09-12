@@ -1,0 +1,1 @@
+1. fix navbar to have links to home and about
