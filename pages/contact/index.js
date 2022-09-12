@@ -85,8 +85,8 @@ class ContactForm extends React.Component {
       <div className="container mx-auto md:px-10 px-8 mb-8">
         {this.state.submitted ? (
           <>
-            <h1 className="contact-header contact">Thanks!</h1>
-            <p className="contact">I'll be in touch with you asap</p>
+            <h1 className="text-teal text-5xl font-bold mb-2 text-center">Thanks!</h1>
+            <p className="text-center">I'll be in touch with you asap</p>
           </>
         ) : (
           <>
@@ -94,7 +94,7 @@ class ContactForm extends React.Component {
             <form onSubmit={this.handleSubmit.bind(this)}>
               <div className="mb-3">
                 <input
-                  className="border border-teal rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="border border-teal rounded border-opacity-50 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="name"
                   name="from_name"
                   onChange={this.handleChange.bind(this, "name")}
@@ -104,7 +104,7 @@ class ContactForm extends React.Component {
               </div>
               <div className="mb-3">
                 <input
-                  className="border border-teal rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="border border-teal rounded border-opacity-50 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   name="reply_to"
                   onChange={this.handleChange.bind(this, "email")}
@@ -114,7 +114,7 @@ class ContactForm extends React.Component {
               </div>
               <div className="mb-3">
                 <textarea
-                  className="border border-teal rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="border border-teal rounded border-opacity-50 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="message"
                   name="message"
                   onChange={this.handleChange.bind(this, "message")}
@@ -124,17 +124,14 @@ class ContactForm extends React.Component {
                   {this.state.errors["message"]}
                 </span>
               </div>
-
-              <div className="d-grid -2 d-sm-block">
-                <button
-                  className="border border-teal rounded border-rad text-teal px-4 py-3"
-                  type="submit"
-                  value="Send"
-                  disabled={this.state.submitted}
-                >
-                  submit
-                </button>
-              </div>
+              <button
+                className="float-right border border-teal rounded border-opacity-50 text-teal px-4 py-2"
+                type="submit"
+                value="Send"
+                disabled={this.state.submitted}
+              >
+                submit
+              </button>
             </form>
           </>
         )}
