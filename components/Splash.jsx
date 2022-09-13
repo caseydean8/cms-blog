@@ -4,7 +4,7 @@ import Typed from "react-typed";
 
 const Splash = () => {
   return (
-    <div className="my-8">
+    <div className="my-8 max-w-5xl mx-auto">
       <h1 className="text-5xl font-semibold py-2">let's go</h1>
         <Typed
           className="text-teal font-bold text-6xl pl-7 py-2"
