@@ -82,7 +82,7 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <div className="my-8">
+      <div className="my-8 p-3 pb-12 max-w-xl mx-auto">
         {this.state.submitted ? (
           <>
             <h1 className="text-teal text-5xl font-bold mb-2 text-center">Thanks!</h1>

@@ -4,3 +4,4 @@ fix modal so that when you click outside of it it closes.
 fix about page styling 
 fix safari/vercel font issue
 set max-width for containers
+rewrite about page 
