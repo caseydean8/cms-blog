@@ -3,6 +3,7 @@ fix mobile font
 rewrite about page 
 remove redundant images on blog 
 fix modal so that when you click outside of it it closes.
-fix safari/vercel font issue
-set max-width for containers
+make buttons/links enlarge when pressed on mobile for better touch ui 
+DONE fix safari/vercel font issue
+DONE set max-width for containers
 DONE fix about page styling 
