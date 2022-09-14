@@ -4,7 +4,7 @@ import data from "../services/data";
 
 const Gallery = () => {
   return (
-    <div className="flex flex-wrap -mx-10 shadow-lg">
+    <div className="flex flex-wrap -mx-12 shadow-lg">
       {data.map((item, index) => {
         return (
           <Project

@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
+    "@fontsource/poppins": "^4.5.9",
     "emailjs": "^4.0.1",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",

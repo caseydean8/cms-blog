@@ -1,7 +1,8 @@
+fix padding under typed-text in Splash
 fix mobile font
+rewrite about page 
 remove redundant images on blog 
 fix modal so that when you click outside of it it closes.
 fix safari/vercel font issue
 set max-width for containers
-rewrite about page 
 DONE fix about page styling 
